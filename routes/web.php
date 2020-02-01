@@ -14,3 +14,13 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/todo', 'TodoController@index');
+$router->get('/todo/{id}', 'TodoController@show');
+$router->put('/todo', 'TodoController@store');
+$router->delete('/todo/{id}', 'TodoController@destroy');
+
+$router->get('/label', 'LabelController@index');
+$router->get('/label/{id}', 'LabelController@show');
+$router->put('/label', 'LabelController@store');
+$router->delete('/label/{id}', 'LabelController@destroy');
